@@ -36,5 +36,15 @@ pipeline {
       }
     }
 
+    stage('eeee') {
+      steps {
+        build 'parameterson'
+        parameters parameterDefinitions(ss) {
+                        string(name: 'param', defaultValue: 'iii')
+                      
+                      }
+        }
+      }
+
+    }
   }
-}
