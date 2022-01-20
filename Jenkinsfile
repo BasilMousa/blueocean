@@ -40,9 +40,9 @@ pipeline {
       steps {
         build 'parameterson'
         parameters parameterDefinitions(ss) {
-                        string(name: 'param', defaultValue: 'iii')
-                      
-                      }
+                                  string(name: 'param', defaultValue: 'iii')
+                                
+                                }
         }
       }
 
