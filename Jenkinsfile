@@ -38,13 +38,12 @@ pipeline {
 
     stage('eeee') {
       steps {
-        build 'parameterson'
-        parameters parameterDefinitions(ss) {
-                                  string(name: 'param', defaultValue: 'iii')
-                                
-                                }
-        }
+        build(job: 'tests', parameters: $branch)
       }
-
     }
+
   }
+  parameters {
+    string(name: 'branch', defaultValue: 'release-ngc-m3', description: 'git branch')
+  }
+}
