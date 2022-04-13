@@ -17,7 +17,7 @@ pipeline {
 
         stage('date added') {
           steps {
-            sh 'echo $Date'
+            sh 'echo ${branch}'
           }
         }
 
