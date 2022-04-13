@@ -38,12 +38,12 @@ pipeline {
 
     stage('eeee') {
       steps {
-        build(job: 'tests/main', parameters: [string(name: 'branch', value:'$branch')])
+        build(job: 'tests/main', parameters: [string(name: 'branch', value:'$br')])
       }
     }
 
   }
   parameters {
-    string(name: 'branch', defaultValue: 'release-ngc-m3', description: 'git branch')
+    string(name: 'br', defaultValue: 'release-ngc-m3', description: 'git branch')
   }
 }
