@@ -39,11 +39,10 @@ pipeline {
     stage('eeee') {
       steps {
         script {
-          def myparam = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
-          echo String.ValueOf(myparam[0])
-          build(job: 'tests/main', parameters: myparam, wait: true)
+          build(job: 'tests/main', parameters: '$def')
         }
 
+        sh 'export def=${br}'
       }
     }
 
