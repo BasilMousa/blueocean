@@ -39,7 +39,7 @@ pipeline {
     stage('eeee') {
       steps {
         script {
-          def myparam = currentBuild.rawBuild.getAction(ParametersAction).getAt(0)
+          def myparam = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
           build(job: 'tests/main', parameters: myparam, wait: true)
         }
 
