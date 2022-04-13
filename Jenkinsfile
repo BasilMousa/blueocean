@@ -38,7 +38,11 @@ pipeline {
 
     stage('eeee') {
       steps {
-        build(job: 'tests/main', parameters: [string(name: 'branch', value: String.valueOf('${br}'))], wait: true)
+        script {
+          def myparam = currentBuild.rawBuild.getAction(ParametersAction).get(1)
+          build(job: 'tests/main', parameters: myparam, wait: true)
+        }
+
       }
     }
 
