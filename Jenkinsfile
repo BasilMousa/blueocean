@@ -38,7 +38,7 @@ pipeline {
 
     stage('eeee') {
       steps {
-        build(job: 'tests/main', parameters: [string(name: 'branchhh', value: $branch)])
+        build(job: 'tests/main', parameters: [string(name: 'branchhh', value: ${branch})])
       }
     }
 
