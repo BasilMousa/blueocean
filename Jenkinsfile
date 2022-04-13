@@ -38,8 +38,9 @@ pipeline {
 
     stage('eeee') {
       steps {
+        sh 'var =${br}'
         script {
-          build(job: 'tests/main', parameters: "$br")
+          build(job: 'tests/main', parameters: "$var")
         }
 
       }
