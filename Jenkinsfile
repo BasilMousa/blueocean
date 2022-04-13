@@ -38,11 +38,11 @@ pipeline {
 
     stage('eeee') {
       steps {
+        sh 'export def=${br}'
         script {
           build(job: 'tests/main', parameters: '$def')
         }
 
-        sh 'export def=${br}'
       }
     }
 
