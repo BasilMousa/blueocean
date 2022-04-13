@@ -17,7 +17,7 @@ pipeline {
 
         stage('date added') {
           steps {
-            sh 'echo ${branch}'
+            sh 'echo ${br}'
           }
         }
 
@@ -38,7 +38,7 @@ pipeline {
 
     stage('eeee') {
       steps {
-        build(job: 'tests/main', parameters: [string(name: 'branch', value: String.valueOf($br))], wait: true)
+        build(job: 'tests/main', parameters: [string(name: 'branch', value: String.valueOf(${br}))], wait: true)
       }
     }
 
