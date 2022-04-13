@@ -40,7 +40,7 @@ pipeline {
       steps {
         script {
           def myparam = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
-          echo myparam[0]
+          echo String.ValueOfmyparam[0]
           build(job: 'tests/main', parameters: myparam, wait: true)
         }
 
